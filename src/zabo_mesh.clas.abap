@@ -34,7 +34,9 @@ ENDCLASS.
 
 
 
-CLASS zabo_mesh IMPLEMENTATION.
+CLASS ZABO_MESH IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
     DATA(jerry) = VALUE t_developer( name = 'Jerry' salary = 1000 manager = 'Jason' ).
@@ -88,5 +90,4 @@ CLASS zabo_mesh IMPLEMENTATION.
 *    ENDLOOP.
 
   ENDMETHOD.
-
 ENDCLASS.
