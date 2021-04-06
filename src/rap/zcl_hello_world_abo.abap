@@ -1,4 +1,4 @@
-CLASS zabo_helloworld DEFINITION
+CLASS zcl_hello_world_abo DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC.
@@ -9,7 +9,7 @@ CLASS zabo_helloworld DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zabo_helloworld IMPLEMENTATION.
+CLASS zcl_hello_world_abo IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
 
     out->write( `Hello from the cloud` ).

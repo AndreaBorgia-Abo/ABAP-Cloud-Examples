@@ -1,4 +1,4 @@
-CLASS zabo_rap_generate_demo_data DEFINITION
+CLASS zcl_generate_demo_data_abo DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -9,15 +9,15 @@ CLASS zabo_rap_generate_demo_data DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zabo_rap_generate_demo_data IMPLEMENTATION.
+CLASS zcl_generate_demo_data_abo IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
 
     " delete existing entries in the database table
-    DELETE FROM zabo_rap_atrav.
-    DELETE FROM zabo_rap_abook.
+    DELETE FROM zrap_atrav_abo.
+    DELETE FROM zrap_abook_abo.
 
     " insert travel demo data
-    INSERT zabo_rap_atrav FROM (
+    INSERT zrap_atrav_abo FROM (
         SELECT
           FROM /dmo/travel
           FIELDS
@@ -46,10 +46,10 @@ CLASS zabo_rap_generate_demo_data IMPLEMENTATION.
     COMMIT WORK.
 
     " insert booking demo data
-    INSERT zabo_rap_abook FROM (
+    INSERT zrap_abook_abo FROM (
         SELECT
           FROM   /dmo/booking    AS booking
-            JOIN zabo_rap_atrav AS z
+            JOIN zrap_atrav_abo AS z
             ON   booking~travel_id = z~travel_id
           FIELDS
             uuid( )                 AS booking_uuid          ,
